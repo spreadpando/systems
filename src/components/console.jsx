@@ -2,13 +2,17 @@ import React from 'react';
 import styled from 'styled-components';
 import pando1 from '../assets/pando1.png';
 import dot1 from '../assets/dot.png';
-const Clock = styled.div`position:fixed;margin-right:2px;bottom:0px;right:0;font-size:.7em;font-family: 'Anonymous-pro', monospace;font-weight:light;line-height:.1em;text-align:right;
+const Clock = styled.div`
+position:absolute;bottom:0px;right:0px;grid-column:3/3;grid-row:2/2;z-index:2;text-align:right;padding-right:10px;
+`;
+const Label = styled.div`
+margin:0;padding:0;
 `;
 const Pando = styled.img`
-width:auto;height:20px;padding-right:3px;margin-bottom:-5px;filter:contrast(5.7);stroke-width:20px;
+width:auto;height:20px;padding-right:3px;filter:contrast(5.7);
 `;
 const Dot = styled.img`
-width:auto;height:7px;position:relative;top:4px;filter:contrast(5.7);padding-right:5px;
+width:auto;height:7px;position:relative;top:4px;filter:contrast(5.7);padding-right:5px;margin-bottom:5px;
 `;
 export default class Console extends React.Component {
 	constructor() {
@@ -27,14 +31,13 @@ export default class Console extends React.Component {
 		return (
 			<Clock>
 				<div><Pando src={pando1} /><Dot src={dot1} /></div>
-				<p>pando.systems</p>
-				<p>{this.state.time.getFullYear() +
+				<Label>pando.systems</Label>
+				<Label>{this.state.time.getFullYear() +
 					":" + this.state.time.getMonth() +
 					":" + this.state.time.getDate() +
 					":" + this.state.time.toLocaleTimeString('en-US', { hour12: false })}
-				</p>
-				<p>uxd|sound-design|webgl</p>
-
+				</Label>
+				<Label>uxd|sound-design|webgl</Label>
 			</Clock >
 		);
 	}

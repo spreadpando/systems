@@ -3,10 +3,6 @@ import SceneManager from './SceneManager';
 export default container => {
     const canvas = createCanvas(document, container);
     const sceneManager = new SceneManager(canvas);
-
-    let canvasHalfWidth;
-    let canvasHalfHeight;
-
     bindEventListeners();
     render();
 
@@ -19,31 +15,42 @@ export default container => {
     function bindEventListeners() {
         window.onresize = resizeCanvas;
         window.onmousemove = mouseMove;
+        window.onclick = mouseClick;
         resizeCanvas();
     }
 
     function resizeCanvas() {
         canvas.style.width = '100%';
         canvas.style.height = '100%';
-
+        canvas.style.position = 'absolute';
+        canvas.style.top = '0px';
+        canvas.style.left = '0px';
         canvas.width = canvas.offsetWidth;
         canvas.height = canvas.offsetHeight;
-
-        canvasHalfWidth = Math.round(canvas.offsetWidth / 2);
-        canvasHalfHeight = Math.round(canvas.offsetHeight / 2);
-
         sceneManager.onWindowResize()
     }
 
+
     function mouseMove({
-        screenX,
-        screenY
+        clientX,
+        clientY
     }) {
-        sceneManager.onMouseMove(screenX - canvasHalfWidth, screenY - canvasHalfHeight);
+        sceneManager.onMouseMove(clientX, clientY);
+    }
+
+    function mouseClick(event) {
+        sceneManager.onMouseClick(event);
+
     }
 
     function render(time) {
         requestAnimationFrame(render);
         sceneManager.update();
+
+
+
+
+
+
     }
 }
