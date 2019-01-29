@@ -1,18 +1,16 @@
 {
 	"Banner1": {
-		"text": "MAX is a visual programming environment. Max Signal Processing (MSP) is a library of sample-level sound synthesis and manipulation tools. Max Jitter is a library of tools for manipulating RGBA matrices in realtime. Combining sound and 3D graphic design in a cohesive programming environment, Max/MSP/Jitter is my primary creative outlet. I will be adding here a collection of experimental Max4Live patches for use in Ableton Live 9 and 10. These patches are intended for performance and sample generation, their functions range from MIDI note generation and quantization to sample manipulation and playback.",
-
-		"links": ""
+		"text": "MAX is a visual programming environment. Max Signal Processing (MSP) is a library of sample-level sound synthesis and manipulation tools. Max Jitter is a library of tools for manipulating RGBA matrices in realtime. Combining sound and 3D graphic design in a cohesive programming environment, Max/MSP/Jitter is my primary creative outlet. I produce and perform audiovisual improvisations using experimental, self-written patches with functions ranging from MIDI note generation and quantization to sample manipulation and playback."
 	},
 	"Banner2": {
-		"text": "CONCEPT/n Pando is the name given to a grove of trembling aspen trees in Utah which share a conjoined root system. The grove is 80.000 years old and its 20.000 tree stems share a conjoined root system, constituting one of the largest organisms on earth. Ecological changes now threaten the posterity of this giant. A standing testament and tacit witness to the primordial shaping of the American West, Pando shrinks as a result of disease and seasonal climate change/n./n./n./n DEVELOPMENT/n pando.systems is a repository of projects produced by a designer from Colorado whose work is inspired by nature, evolution and collective conciousness. I work in sound and music,front end and UX development. I develop self contained systems and tools for experimental media development. This website is built in React using webpack 4, css-in-js (styled-components), and threejs. I am also familiar with python, MIDI, OSC & Unity as well as most industry wireframing / prototyping and DAW softwares and outboard audio gear."
+		"text": "CONCEPT/n Pando is the name given to a grove of trembling aspen trees in Utah which share a conjoined root system. The grove is 80.000 years old and its 20.000 tree stems share a conjoined root system, constituting one of the largest organisms on earth. Ecological changes now threaten the posterity of this giant. A standing testament and tacit witness to the primordial shaping of the American West, Pando shrinks as a result of disease and seasonal climate change/n/n*/n/n DEVELOPMENT/n pando.systems is a repository of projects produced by a designer from Colorado whose work is inspired by nature, evolution and collective conciousness. I work in sound and music,front end and UX development. I develop self contained systems and tools for experimental media development. This website is built in React using webpack 4, css-in-js (styled-components), and threejs. I am also familiar with python, MIDI, OSC, Unity and outboard audio gear as well as most industry wireframing / prototyping / DAW softwares."
 	},
 	"Banner3": {
-		"text": "B.F.A./nTisch School of the Arts/n Honors in Recorded Music/n*/nUG COURSEWORK/nDartmouth College/n Citation: Digital Music/nBerklee College of Music: Valencia, Spain/nNon-linear Production and Mixing/n*/nFREELANCE/nCatalog Manager: Berlin, DE/nResonate Streaming Co-operative/nMarch 2018 - present|https://resonate.is/n+/nCatalog Manager: NYC/nRare Earth Vibration Association/nJanuary Jan-Sept, 2017|www.revainc.org"
+		"text": "B.F.A./nTisch School of the Arts/n Honors in Recorded Music/n*/nUG COURSEWORK/nDartmouth College/n Citation: Digital Music/n+/n Berklee College of Music: Valencia, Spain/nNon-linear Production and Mixing/n*/nFREELANCE/nCatalog Manager: Berlin, DE/nResonate Streaming Co-operative/nMarch 2018 - present|https://resonate.is/n+/nCatalog Manager: NYC/nRare Earth Vibration Association/nJanuary Jan-Sept, 2017|www.revainc.org"
 
 	},
 	"Banner4": {
-		"text": "github, instagram, twitter: /n @spreadpando"
+		"text": "soundcloud, github, instagram, twitter: /n @spreadpando/nemail:/ninfo@pando.systems"
 
 	},
 	"Banner5": {

@@ -57,8 +57,8 @@ export default canvas => {
         height
     }) {
         const aspectRatio = width / height;
-        const fieldOfView = 40;
-        const nearPlane = 4;
+        const fieldOfView = 60;
+        const nearPlane = 20;
         const farPlane = 1000;
         const camera = new THREE.PerspectiveCamera(fieldOfView, aspectRatio, nearPlane, farPlane);
         camera.position.z = 60;
@@ -110,8 +110,8 @@ export default canvas => {
 
     function updateCameraPositionRelativeToMouse() {
 
-        camera.position.x += ((mousePosition.x * 30) - 1 * camera.position.x) * 0.1;
-        camera.position.y += (-(mousePosition.y * 20) - 1 * camera.position.y) * 0.1;
+        camera.position.x += ((mousePosition.x * 30) - 1 * camera.position.x) * 1.2;
+        camera.position.y += (-(mousePosition.y * 20) - 1 * camera.position.y) * 1.3;
         camera.lookAt(origin);
 
 

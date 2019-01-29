@@ -3,7 +3,7 @@ import {
     areComponentsEqual
 } from 'react-hot-loader';
 import threeEntryPoint from './threeEntryPoint';
-export const points = [".MAX", ".info", ".cv", ".social"];
+export const points = [".MAX", ".info", ".cv", ".links"];
 export default scene => {
     var group = new THREE.Group;
     var banners = new THREE.Group;
@@ -22,10 +22,9 @@ export default scene => {
         var texture1 = new THREE.Texture(canvas);
         texture1.needsUpdate = true;
         var star = new THREE.Vector3();
-        star.x = 3 * i;
-        star.y = i * i;
-        star.z = i;
-
+        star.x = THREE.Math.randFloatSpread(20);
+        star.y = THREE.Math.randFloatSpread(20);
+        star.z = THREE.Math.randFloatSpread(20);
         starGeometry.vertices.push(star);
         starsGeometry.vertices.push(star);
         var textMaterial = new THREE.PointsMaterial({
@@ -70,9 +69,9 @@ export default scene => {
     function update(time) {
 
 
-        group.rotation.x += Math.random() * 0.0;
-        group.rotation.y += Math.random() * 0.0;
-        group.rotation.z += Math.random() * 0.02;
+        group.rotation.x += Math.random() * 0.01;
+        group.rotation.y += Math.random() * 0.005;
+        group.rotation.z += Math.random() * 0.01;
 
 
     }

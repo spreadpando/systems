@@ -9,10 +9,10 @@ const Label = styled.div`
 margin:0;padding:0;
 `;
 const Pando = styled.img`
-width:auto;height:20px;padding-right:3px;filter:contrast(5.7);
+width:auto;height:30px;padding-right:3px;filter:contrast(5.7);
 `;
 const Dot = styled.img`
-width:auto;height:7px;position:relative;top:4px;filter:contrast(5.7);padding-right:5px;margin-bottom:5px;
+width:auto;height:12px;position:relative;top:4px;filter:contrast(5.7);padding-right:5px;margin-bottom:5px;
 `;
 export default class Console extends React.Component {
 	constructor() {
