@@ -3,7 +3,7 @@ import {
     areComponentsEqual
 } from 'react-hot-loader';
 import threeEntryPoint from './threeEntryPoint';
-export const points = [".MAX", ".info", ".cv", ".links"];
+export const points = ["UXD", "AUDIO", "VISUAL", "C.V.", "DEV", "P.R."];
 export default scene => {
     var group = new THREE.Group;
     var banners = new THREE.Group;
@@ -11,20 +11,20 @@ export default scene => {
     for (var i = 0; i < points.length; i++) {
         var starGeometry = new THREE.Geometry();
         var canvas = document.createElement("canvas");
-        var size = 512;
+        var size = 1024;
         canvas.width = size;
         canvas.height = size;
         var context1 = canvas.getContext('2d');
         context1.fillStyle = "#000000";
         context1.textAlign = "left";
-        context1.font = "normal 95px Anonymous-pro, monospace";
+        context1.font = "normal 195px Cutive Mono, monospace";
         context1.fillText(points[i], size / 4, size / 3);
         var texture1 = new THREE.Texture(canvas);
         texture1.needsUpdate = true;
         var star = new THREE.Vector3();
-        star.x = THREE.Math.randFloatSpread(20);
-        star.y = THREE.Math.randFloatSpread(20);
-        star.z = THREE.Math.randFloatSpread(20);
+        star.x = THREE.Math.randFloatSpread(20) * 1.2;
+        star.y = THREE.Math.randFloatSpread(20) + 10;
+        star.z = THREE.Math.randFloatSpread(20) * 1.2;
         starGeometry.vertices.push(star);
         starsGeometry.vertices.push(star);
         var textMaterial = new THREE.PointsMaterial({
@@ -35,7 +35,7 @@ export default scene => {
         });
         var pointMaterial = new THREE.PointsMaterial({
             size: 1.4,
-            color: 0x0000ff,
+            color: 0x000000,
             depthTest: true,
             transparent: true,
             //colorsneedsUpdate: true
@@ -53,27 +53,20 @@ export default scene => {
         banners.add(banner);
     }
     group.add(banners);
-
-
     var lineMaterial = new THREE.LineBasicMaterial({
         color: 0x000000,
-        depthTest: false,
-        opacity: .5,
-        transparent: false
-
+        depthTest: true,
+        opacity: 0.2,
+        transparent: true
     });
     var line = new THREE.LineLoop(starsGeometry, lineMaterial);
     group.add(line);
     scene.add(group);
 
     function update(time) {
-
-
-        group.rotation.x += Math.random() * 0.01;
+        // group.rotation.x += Math.random() * 0.005;
         group.rotation.y += Math.random() * 0.005;
-        group.rotation.z += Math.random() * 0.01;
-
-
+        // group.rotation.z += Math.random() * 0.005;
     }
     return {
         update,
