@@ -34,7 +34,7 @@ export default scene => {
             transparent: true
         });
         var pointMaterial = new THREE.PointsMaterial({
-            size: 1.4,
+            size: 1.7,
             color: 0x000000,
             depthTest: true,
             transparent: true,
@@ -64,7 +64,7 @@ export default scene => {
     scene.add(group);
 
     function update(time) {
-        // group.rotation.x += Math.random() * 0.005;
+        //group.rotation.x += Math.random() * 0.005;
         group.rotation.y += Math.random() * 0.005;
         // group.rotation.z += Math.random() * 0.005;
     }

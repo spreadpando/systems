@@ -32,10 +32,10 @@ export default container => {
 
 
     function mouseMove({
-        clientX,
-        clientY
+        pageX,
+        pageY
     }) {
-        sceneManager.onMouseMove(clientX, clientY);
+        sceneManager.onMouseMove(pageX, pageY);
     }
 
     function mouseClick(event) {
