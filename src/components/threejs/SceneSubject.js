@@ -13,9 +13,9 @@ export default scene => {
 		canvas.width = size;
 		canvas.height = size;
 		var context1 = canvas.getContext("2d");
-		context1.fillStyle = "#FF5E00";
+		context1.fillStyle = "#000000";
 		context1.textAlign = "left";
-		context1.font = "normal 195px Helvetica Neue, monospace";
+		context1.font = "normal 225px Tahoma, Geneva, sans-serif";
 		context1.fillText(points[i], size / 4, size / 3);
 		var texture1 = new THREE.Texture(canvas);
 		texture1.needsUpdate = true;
@@ -26,7 +26,7 @@ export default scene => {
 		starGeometry.vertices.push(star);
 		starsGeometry.vertices.push(star);
 		var textMaterial = new THREE.PointsMaterial({
-			size: 14,
+			size: 10,
 			map: texture1,
 			depthTest: false,
 			transparent: true

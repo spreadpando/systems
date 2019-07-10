@@ -15,7 +15,7 @@ const Foot = styled.div`
 const SocialLink = styled.a`
 	color: white;
 	text-decoration: none;
-	font-family: "Helvetica";
+	font-family: "Tahoma, Geneva, sans-serif";
 	font-weight: 200;
 	font-size: 0.7em;
 	padding-right: 5%;
@@ -25,7 +25,7 @@ const CP = styled.span`
 	font-size: 0.7em;
 	color: white;
 	text-decoration: none;
-	font-family: "Helvetica";
+	font-family: "Tahoma, Geneva, sans-serif";
 	right: 10px;
 	bottom: 5px;
 `;
