@@ -1,82 +1,75 @@
-import * as THREE from 'three';
-import {
-    areComponentsEqual
-} from 'react-hot-loader';
-import threeEntryPoint from './threeEntryPoint';
+import * as THREE from "three";
+import { areComponentsEqual } from "react-hot-loader";
+import threeEntryPoint from "./threeEntryPoint";
 export const points = ["UXD", "AUDIO", "VISUAL", "C.V.", "DEV", "P.R."];
 export default scene => {
-    var group = new THREE.Group;
-    var banners = new THREE.Group;
-    var starsGeometry = new THREE.Geometry();
-    for (var i = 0; i < points.length; i++) {
-        var starGeometry = new THREE.Geometry();
-        var canvas = document.createElement("canvas");
-        var size = 1024;
-        canvas.width = size;
-        canvas.height = size;
-        var context1 = canvas.getContext('2d');
-        context1.fillStyle = "#000000";
-        context1.textAlign = "left";
-        context1.font = "normal 195px Cutive Mono, monospace";
-        context1.fillText(points[i], size / 4, size / 3);
-        var texture1 = new THREE.Texture(canvas);
-        texture1.needsUpdate = true;
-        var star = new THREE.Vector3();
-        star.x = THREE.Math.randFloatSpread(20) * 1.2;
-        star.y = THREE.Math.randFloatSpread(20) + 10;
-        star.z = THREE.Math.randFloatSpread(20) * 1.2;
-        starGeometry.vertices.push(star);
-        starsGeometry.vertices.push(star);
-        var textMaterial = new THREE.PointsMaterial({
-            size: 10,
-            map: texture1,
-            depthTest: false,
-            transparent: true
-        });
-        var pointMaterial = new THREE.PointsMaterial({
-            size: 1.7,
-            color: 0x000000,
-            depthTest: true,
-            transparent: true,
-            //colorsneedsUpdate: true
-        });
-        var bulletPoint = new THREE.Points(starGeometry, pointMaterial);
-        var banner = new THREE.Points(starGeometry, textMaterial);
+	var group = new THREE.Group();
+	var banners = new THREE.Group();
+	var starsGeometry = new THREE.Geometry();
+	for (var i = 0; i < points.length; i++) {
+		var starGeometry = new THREE.Geometry();
+		var canvas = document.createElement("canvas");
+		var size = 1024;
+		canvas.width = size;
+		canvas.height = size;
+		var context1 = canvas.getContext("2d");
+		context1.fillStyle = "#000000";
+		context1.textAlign = "left";
+		context1.font = "normal 195px Cutive Mono, monospace";
+		context1.fillText(points[i], size / 4, size / 3);
+		var texture1 = new THREE.Texture(canvas);
+		texture1.needsUpdate = true;
+		var star = new THREE.Vector3();
+		star.x = THREE.Math.randFloatSpread(20) * 1.2;
+		star.y = THREE.Math.randFloatSpread(20) + 10;
+		star.z = THREE.Math.randFloatSpread(20) * 1.2;
+		starGeometry.vertices.push(star);
+		starsGeometry.vertices.push(star);
+		var textMaterial = new THREE.PointsMaterial({
+			size: 10,
+			map: texture1,
+			depthTest: false,
+			transparent: true
+		});
+		var pointMaterial = new THREE.PointsMaterial({
+			size: 1.7,
+			color: 0x000000,
+			depthTest: true,
+			transparent: true
+			//colorsneedsUpdate: true
+		});
+		var bulletPoint = new THREE.Points(starGeometry, pointMaterial);
+		var banner = new THREE.Points(starGeometry, textMaterial);
 
-        switch (i) {
-            case i:
-                bulletPoint.name = points[i];
-                break;
-        }
-        banner.add(bulletPoint)
+		switch (i) {
+			case i:
+				bulletPoint.name = points[i];
+				break;
+		}
+		banner.add(bulletPoint);
 
-        banners.add(banner);
-    }
-    group.add(banners);
-    var lineMaterial = new THREE.LineBasicMaterial({
-        color: 0x000000,
-        depthTest: true,
-        opacity: 0.2,
-        transparent: true
-    });
-    var line = new THREE.LineLoop(starsGeometry, lineMaterial);
-    group.add(line);
-    scene.add(group);
-
-    function update(time) {
-        //group.rotation.x += Math.random() * 0.005;
-        group.rotation.y += Math.random() * 0.005;
-        // group.rotation.z += Math.random() * 0.005;
-    }
-    return {
-        update,
-
-    }
-}
-
-
-
-
+		banners.add(banner);
+	}
+	group.add(banners);
+	var lineMaterial = new THREE.LineBasicMaterial({
+		color: 0x000000,
+		depthTest: true,
+		opacity: 0.2,
+		transparent: true
+	});
+	var line = new THREE.LineLoop(starsGeometry, lineMaterial);
+	group.add(line);
+	scene.add(group);
+	group.position.set(20, 0, 0);
+	function update(time) {
+		//group.rotation.x += Math.random() * 0.005;
+		group.rotation.y += Math.random() * 0.005;
+		// group.rotation.z += Math.random() * 0.005;
+	}
+	return {
+		update
+	};
+};
 
 /*
 export default scene => {
@@ -176,10 +169,6 @@ export default scene => {
 
 
 */
-
-
-
-
 
 /*
 export default scene => {
