@@ -3,7 +3,7 @@ import styled, { css } from "styled-components";
 const Foot = styled.div`
 	position: fixed;
 	bottom: 0;
-	height: 3%;
+	height: 25px;
 	width: 100%;
 	grid-column: 1/5;
 	background-color: black;
@@ -15,7 +15,9 @@ const Foot = styled.div`
 const SocialLink = styled.a`
 	color: white;
 	text-decoration: none;
-	font-family: "Cutive Mono";
+	font-family: "Helvetica";
+	font-weight: 200;
+	font-size: 0.7em;
 	padding-right: 5%;
 `;
 const CP = styled.span`
@@ -23,7 +25,7 @@ const CP = styled.span`
 	font-size: 0.7em;
 	color: white;
 	text-decoration: none;
-	font-family: "Cutive Mono";
+	font-family: "Helvetica";
 	right: 10px;
 	bottom: 5px;
 `;

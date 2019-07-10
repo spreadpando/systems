@@ -3,16 +3,42 @@ import styled, { css } from "styled-components";
 import { EventBus } from "..";
 import { points } from "./threejs/SceneSubject";
 const TextData = require("../json/text-content.json");
-const ParentField = styled.div`overflow:hidden;grid-row:2/3;grid-column:1/2;`;
-const TextField = styled.div`height:100%;position:relative;z-index:2;text-align:left;margin-right:-50px;padding-right:50px;padding-left:10px;overflow-y:scroll; @media (max-width: 110vh) {
-    grid-column:1/4;
-  }`;
-const Header = styled.h1`font-family: 'Questrial', sans-serif;font-weight:normal;font-size:3vw;`;
-const Pgraph = styled.p`font-family: 'Questrial', sans-serif;line-height:1.5em;text-align:left;`;
+const ParentField = styled.div`
+	overflow: hidden;
+	grid-row: 2/3;
+	grid-column: 1/2;
+`;
+const TextField = styled.div`
+	height: 100%;
+	position: relative;
+	z-index: 2;
+	text-align: left;
+	margin-right: -50px;
+	padding-right: 50px;
+	padding-left: 10px;
+	overflow-y: scroll;
+	@media (max-width: 110vh) {
+		grid-column: 1/4;
+	}
+`;
+const Header = styled.h1`
+	font-family: "Questrial", sans-serif;
+	font-weight: normal;
+	font-size: 24px;
+`;
+const Pgraph = styled.p`
+	font-family: "Questrial", sans-serif;
+	font-size: 12px;
+	line-height: 24px;
+	text-align: left;
+`;
 export default class Banner extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = { textContent: TextData.Default.text, textContent1: TextData.Default.head }
+		this.state = {
+			textContent: TextData.Default.text,
+			textContent1: TextData.Default.head
+		};
 	}
 	componentWillMount() {
 		EventBus.subscribe(points[0], this.displayOne.bind(this));
@@ -23,22 +49,40 @@ export default class Banner extends React.Component {
 		EventBus.subscribe(points[5], this.displaySix.bind(this));
 	}
 	displayOne() {
-		this.setState({ textContent: TextData.Banner1.text, textContent1: TextData.Banner1.head });
+		this.setState({
+			textContent: TextData.Banner1.text,
+			textContent1: TextData.Banner1.head
+		});
 	}
 	displayTwo() {
-		this.setState({ textContent: TextData.Banner2.text, textContent1: TextData.Banner2.head });
+		this.setState({
+			textContent: TextData.Banner2.text,
+			textContent1: TextData.Banner2.head
+		});
 	}
 	displayThree() {
-		this.setState({ textContent: TextData.Banner3.text, textContent1: TextData.Banner3.head });
+		this.setState({
+			textContent: TextData.Banner3.text,
+			textContent1: TextData.Banner3.head
+		});
 	}
 	displayFour() {
-		this.setState({ textContent: TextData.Banner4.text, textContent1: TextData.Banner4.head });
+		this.setState({
+			textContent: TextData.Banner4.text,
+			textContent1: TextData.Banner4.head
+		});
 	}
 	displayFive() {
-		this.setState({ textContent: TextData.Banner5.text, textContent1: TextData.Banner5.head });
+		this.setState({
+			textContent: TextData.Banner5.text,
+			textContent1: TextData.Banner5.head
+		});
 	}
 	displaySix() {
-		this.setState({ textContent: TextData.Banner6.text, textContent1: TextData.Banner6.head });
+		this.setState({
+			textContent: TextData.Banner6.text,
+			textContent1: TextData.Banner6.head
+		});
 	}
 
 	render() {
@@ -47,14 +91,11 @@ export default class Banner extends React.Component {
 		return (
 			<ParentField>
 				<TextField>
-					<Header>
-						{headData}
-					</Header>
+					<Header>{headData}</Header>
 
-					{
-						textData.split('/n').map((paragraph, i) => <Pgraph key={i}>{paragraph}</Pgraph>)
-					}
-
+					{textData.split("/n").map((paragraph, i) => (
+						<Pgraph key={i}>{paragraph}</Pgraph>
+					))}
 				</TextField>
 			</ParentField>
 		);

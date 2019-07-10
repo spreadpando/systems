@@ -13,20 +13,20 @@ export default scene => {
 		canvas.width = size;
 		canvas.height = size;
 		var context1 = canvas.getContext("2d");
-		context1.fillStyle = "#000000";
+		context1.fillStyle = "#FF5E00";
 		context1.textAlign = "left";
-		context1.font = "normal 195px Cutive Mono, monospace";
+		context1.font = "normal 195px Helvetica Neue, monospace";
 		context1.fillText(points[i], size / 4, size / 3);
 		var texture1 = new THREE.Texture(canvas);
 		texture1.needsUpdate = true;
 		var star = new THREE.Vector3();
 		star.x = THREE.Math.randFloatSpread(20) * 1.2;
-		star.y = THREE.Math.randFloatSpread(20) + 10;
+		star.y = THREE.Math.randFloatSpread(20) * 1.2;
 		star.z = THREE.Math.randFloatSpread(20) * 1.2;
 		starGeometry.vertices.push(star);
 		starsGeometry.vertices.push(star);
 		var textMaterial = new THREE.PointsMaterial({
-			size: 10,
+			size: 14,
 			map: texture1,
 			depthTest: false,
 			transparent: true
